@@ -9,13 +9,13 @@ export const Home = () => {
 
 
 
-useEffect(()=>{
-    GET(url)
-    .then(res=>console.log(res))
+// useEffect(()=>{
+//     GET(url)
+//     .then(res=>console.log(res))
 
-    POST(`${url}`, "salam")
-    .then(res=>console.log(res))
-},[])
+//     POST(`${url}`, "salam")
+//     .then(res=>console.log(res))
+// },[])
 
   return (
     <div>Home</div>

@@ -3,23 +3,36 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/images/logo.png.webp'
 
 const Header = () => {
-    const [sidebarShow, setSidebarShow] = useState('sidebar-hide')
+    const [sidebarShow, setSidebarShow] = useState(0)
     const [sidebarContentShow, setSidebarContentShow] = useState('none')
     const [sidebarSubContentShow, setSidebarSubContentShow] = useState('none')
 
 
 
-    const sideBarShowF = (e)=>{
-
+    const sidebarHideF = (e)=>{
         const sidebar = e.currentTarget
         if(e.target==e.currentTarget){
-            console.log(e.currentTarget.children[0])
+                sidebar.children[0].classList.remove('sidebar-show')
+                sidebar.children[0].classList.add('sidebar-left-0')
+                    sidebar.children[0].classList.add('sidebar-hide')
+                    setTimeout(() => {
+                        sidebar.classList.add('display-none')
+                        sidebar.children[0].classList.remove('sidebar-hide')
+                        sidebar.children[0].classList.remove('sidebar-left-0')
+                    }, 500);
 
-            sidebar.children[0].classList.add('sidebar-hide')
             
         }
-       
+    }
 
+    const sidebarShowF = (e) => {
+        const sidebarBack = document.querySelector('.sidebar-back')
+
+        sidebarBack.classList.remove('display-none')
+        setTimeout(()=>{
+            sidebarBack.children[0].classList.add('sidebar-show')
+        },50)
+        
     }
 
 
@@ -30,7 +43,7 @@ const sidebarContentShowF = (e) => {
         setSidebarContentShow('show')
        
     }
-    else if(sidebarContentShow=== 'show'){
+    else if(sidebarContentShow === 'show'){
         sideContent.classList.add('display-none')
         setSidebarContentShow('none')
     }
@@ -55,7 +68,7 @@ const sidebarSubContentShowF = (e) => {
 
     return (
         <div className='header-back'>
-            <div className='sidebar-back' onClick={sideBarShowF}>
+            <div className='sidebar-back display-none' onClick={sidebarHideF}>
                 <div className='sidebar'>
                 <div className='menu-advanced'>
                         <i className="fa-solid fa-magnifying-glass"></i>
@@ -65,7 +78,7 @@ const sidebarSubContentShowF = (e) => {
                     <img src={logo} alt="" />
                     <div className='sidebar-navbar'>
                         <div className='sidebar-navbar-header'>
-                        <span onClick={sidebarContentShowF} className='sidebar-navbar-header-button'>MENU<i class="menu-icon fa-solid fa-bars"></i></span>
+                        <span onClick={sidebarContentShowF} className='sidebar-navbar-header-button'>MENU<i className="menu-icon fa-solid fa-bars"></i></span>
                         </div>
                         <ul className='sidebar-navbar-content display-none'>
                             <li>Home</li>
@@ -135,7 +148,7 @@ const sidebarSubContentShowF = (e) => {
                         <i className="fa-solid fa-cart-plus"></i>
                     </div>
 
-                    <i className="menu-icon fa-solid fa-bars"></i>
+                    <i onClick={sidebarShowF} className="menu-icon fa-solid fa-bars"></i>
                 </div>
             </div>
         </div>
