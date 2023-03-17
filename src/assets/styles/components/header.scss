@@ -1,0 +1,193 @@
+
+.header-back {
+    height: 8vh;
+    .header {
+        position: fixed;
+        width: 100%;
+        // border: 1px solid black;
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        box-shadow: 0px 2px 15px rgb(167, 159, 159);
+
+        img {
+            width: 100px;
+        }
+
+        .navbar {
+          
+            display: flex;
+
+            & > * {
+                margin-left: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &:hover {
+                    .underline {
+                        width: 100%;
+                    }
+                }
+
+
+                & > * {
+                    color: black;
+                    font-size: 22px;
+                   
+                }
+                .underline {
+                    border-top: 3px solid black;
+                    
+                    transition: 0.8s;
+                    width: 0px;
+                  
+                }
+
+                & > *:hover {
+                    color: rgb(83, 4, 4);
+                  
+                }
+            }
+        }
+
+        .menu {
+            display: flex;
+
+            & > * {
+                margin-right: 15px;
+                font-size: 20px;
+            }
+
+            .menu-login-register {
+                & > * {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 15px;
+
+                    &:hover {
+                        color: rgb(3, 87, 14);
+                        
+                    }
+                }
+            }
+
+            .menu-advanced {
+               & > * {
+                margin-right: 10px;
+                cursor: pointer;
+
+                &:hover {
+                    color: aqua;
+                }
+               }
+            }
+
+            .menu-icon {
+                font-weight: 900;
+                font-size: 30px;
+                display: none;
+                &:hover {
+                    color: rgb(73, 43, 3);
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+        @media screen and (max-width:1000px) {
+            .navbar {
+                display: none;
+            }
+            .menu {
+                & > *:last-child {
+                    display: block;
+                }
+
+                & > *:not(:last-child) {
+                    display: none;
+                }
+            }
+    }
+}
+
+.sidebar-back {
+
+    position: absolute;
+    background-color: rgba(255, 228, 196, 0.603);
+    height: 100vh;
+    width: 100%;
+    z-index: 11;
+    
+
+    .sidebar {
+        position: absolute;
+        width: 300px;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+
+        .sidebar-navbar {
+
+            background-color: rgb(0, 0, 0);
+            width: 80%;
+            color: white;
+            padding: 10px;
+
+            .sidebar-navbar-header {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .sidebar-navbar-content {
+                // display: none;
+                display: flex;
+                flex-direction: column;
+
+                & > * {
+                    margin-bottom: 10px;
+                    // padding: 5px;
+                    border-radius: 10px;
+                    font-size: 20px;
+                    &:not(:nth-child(6)):hover {
+                        background-color: rgb(53, 48, 48);
+                    }
+                }
+
+                &>:nth-child(6){
+                    & > * {
+                        & > * {
+                            margin-bottom: 10px;
+                            margin-left: 20px;
+                            // padding: 5px;
+                            border-radius: 10px;
+                            font-size: 20px;
+                            &:hover {
+                                background-color: rgb(53, 48, 48);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar-show {
+        left: 0%;
+    }
+
+    .sidebar-hide {
+        left: -100%;
+        // display: none;
+    }
+}
+
+
+}
