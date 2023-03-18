@@ -1,7 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 // BASES
 @import './bases/index.scss';
 
 
 // COMPONENTS
 
-@import './components/header.scss'
+@import './components/header.scss';
+@import './components/section1-home.scss'

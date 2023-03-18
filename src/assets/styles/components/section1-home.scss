@@ -1,0 +1,65 @@
+.section1-home {
+
+    display: grid;
+    grid-template-areas:
+        'first first second thirth'
+        'first first fourth fives';
+    gap: 10px;
+    padding: 10px;
+
+    &>* {
+        // border: 1px solid green;
+        background-size: cover;
+        height: 300px;
+
+        &:nth-child(1) {
+            grid-area: first;
+            height: 600px;
+
+        }
+
+        &:nth-child(2) {
+            grid-area: second;
+           
+        }
+
+        &:nth-child(3) {
+            grid-area: thirth;
+        }
+
+        &:nth-child(4) {
+            grid-area: fourth;
+            
+        }
+
+        &:nth-child(5) {
+            grid-area: fives;
+        }
+
+
+
+
+    }
+
+    @media screen and (max-width: 1000px) {
+
+        & {
+            grid-template-areas:
+                'first first'
+                'first first'
+                'second thirth'
+                'fourth fives';
+    
+    
+    
+    
+        }
+
+
+
+
+}
+
+
+
+}
