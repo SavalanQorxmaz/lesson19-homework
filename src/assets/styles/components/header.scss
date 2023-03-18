@@ -129,14 +129,53 @@
         align-items: center;
         flex-direction: column;
         left: -300px;
+
+        .sidebar-close-frame {
+            margin-top: 20px;
+            width: 90%;
+            display: flex;
+            justify-content: flex-end;
+
+            .sidebar-close-button {
+
+                font-size: 40px;
+
+                &:hover {
+                    color: rgb(121, 129, 6);
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+        .sidebar-advanced {
+
+            & > * {
+                font-size: 30px;
+                margin: 20px;
+                &:hover {
+                    color: rgb(142, 151, 18);
+                    cursor: pointer;
+                }
+            }
+        }
       
-    
-        
+        .sidebar-logo-frame {
+            width: 80%;
+
+            img {
+                height: 40px;
+            }
+        }
+
+        & > * {
+            margin-bottom: 20px;
+        }
 
 
         .sidebar-navbar {
 
-            background-color: rgb(0, 0, 0);
+            background-color: rgb(59, 58, 58);
             width: 80%;
             color: white;
             padding: 10px;
@@ -145,6 +184,15 @@
                 width: 100%;
                 display: flex;
                 justify-content: flex-end;
+
+                span {
+                    background-color: black;
+                    padding: 5px;
+                    &:hover {
+                        background-color: rgb(99, 96, 96);
+                    }
+                    
+                }
             }
 
             .sidebar-navbar-content {

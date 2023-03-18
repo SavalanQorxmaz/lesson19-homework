@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/images/logo.png.webp'
 
 const Header = () => {
-    const [sidebarShow, setSidebarShow] = useState(0)
     const [sidebarContentShow, setSidebarContentShow] = useState('none')
     const [sidebarSubContentShow, setSidebarSubContentShow] = useState('none')
 
@@ -11,7 +10,7 @@ const Header = () => {
 
     const sidebarHideF = (e)=>{
         const sidebar = e.currentTarget
-        if(e.target==e.currentTarget){
+        if(e.target===e.currentTarget){
                 sidebar.children[0].classList.remove('sidebar-show')
                 sidebar.children[0].classList.add('sidebar-left-0')
                     sidebar.children[0].classList.add('sidebar-hide')
@@ -19,10 +18,22 @@ const Header = () => {
                         sidebar.classList.add('display-none')
                         sidebar.children[0].classList.remove('sidebar-hide')
                         sidebar.children[0].classList.remove('sidebar-left-0')
-                    }, 500);
+                    }, 500);  
 
-            
         }
+    }
+
+    const sidebarHideButtonF = (e) => {
+        const sidebarBack = document.querySelector('.sidebar-back')
+        sidebarBack.children[0].classList.remove('sidebar-show')
+        sidebarBack.children[0].classList.add('sidebar-left-0')
+            sidebarBack.children[0].classList.add('sidebar-hide')
+            setTimeout(() => {
+                sidebarBack.classList.add('display-none')
+                sidebarBack.children[0].classList.remove('sidebar-hide')
+                sidebarBack.children[0].classList.remove('sidebar-left-0')
+            }, 500);   
+
     }
 
     const sidebarShowF = (e) => {
@@ -70,12 +81,17 @@ const sidebarSubContentShowF = (e) => {
         <div className='header-back'>
             <div className='sidebar-back display-none' onClick={sidebarHideF}>
                 <div className='sidebar'>
-                <div className='menu-advanced'>
+                    <div className='sidebar-close-frame'>
+                        <i onClick={sidebarHideButtonF} className="sidebar-close-button fa-regular fa-circle-xmark"></i>
+                    </div>
+                <div className='sidebar-advanced'>
                         <i className="fa-solid fa-magnifying-glass"></i>
                         <i className="fa-solid fa-heart"></i>
                         <i className="fa-solid fa-cart-plus"></i>
                     </div>
-                    <img src={logo} alt="" />
+                    <div className='sidebar-logo-frame'>
+                        <img src={logo} alt="" />
+                        </div>
                     <div className='sidebar-navbar'>
                         <div className='sidebar-navbar-header'>
                         <span onClick={sidebarContentShowF} className='sidebar-navbar-header-button'>MENU<i className="menu-icon fa-solid fa-bars"></i></span>
