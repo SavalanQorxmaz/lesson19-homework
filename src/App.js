@@ -1,10 +1,10 @@
-import { useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {MainContext} from './services/MainContext'
 import { Header } from "./components/Header";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 
-import {GET, axios} from './services/FechService'
+import {GET} from './services/FechService'
 
 const url = 'https://dummyjson.com/products'
 
@@ -43,7 +43,7 @@ addStates,
       setMainDataIsReady(true)
       return res
     })
-    .then(res=>console.log(res.products))
+    // .then(res=>console.log(res.products))
     
 
 },[])
