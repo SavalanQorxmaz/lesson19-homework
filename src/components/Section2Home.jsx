@@ -26,7 +26,7 @@ sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
 const Section2Card = ({category, brand, description, image, price})=>{
 
   return (
-    <Card className='section2-home-card' style={{backgroundImage: `url(${image})`}} >
+    <Card className='section2-home-card' style={{background: `linear-gradient(to right, rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url(${image})`}} >
     <CardContent>
       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
        {category}

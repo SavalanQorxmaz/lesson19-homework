@@ -6,15 +6,15 @@
         'first first fourth fives';
     gap: 10px;
     padding: 10px;
+    height: 600px;
 
     &>* {
-        // border: 1px solid green;
+        border: 3px solid rgb(77, 2, 2);
         background-size: cover;
-        height: 300px;
 
         &:nth-child(1) {
             grid-area: first;
-            height: 600px;
+            
 
         }
 
@@ -49,6 +49,7 @@
                 'first first'
                 'second thirth'
                 'fourth fives';
+                height: 1200px;
     
     
     
@@ -67,7 +68,7 @@
             'fourth'
             'fives';
 
-
+            height: 1800px;
 
 
     }
