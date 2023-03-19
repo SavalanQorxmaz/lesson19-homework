@@ -17,12 +17,16 @@ const Section1Card = ({ image, brand, category }) => {
 }
 
 const Section1Home = () => {
-  const [data, setData] = useState([])
+
   const [dataIsReady, setDataIsReady] = useState(false)
+  const [data, setData] = useState([])
 
   const { mainData, mainDataIsReady } = useContext(MainContext)
 
   // mainDatanin hazir olmasini gozlemek ucun funksiya
+
+ 
+
 
   const getMainData = () => {
     return new Promise((res, rej) => {
@@ -50,9 +54,11 @@ const Section1Home = () => {
 
       .then(res => console.log(res))
       .catch(err => console.log(err))
+    setData(mainData)
+  
 
 
-  }, [mainDataIsReady])
+  }, [mainData])
 
 
 

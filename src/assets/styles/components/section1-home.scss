@@ -54,12 +54,24 @@
     
     
         }
-
-
-
-
 }
 
+@media screen and (max-width: 600px) {
+
+    & {
+        grid-template-areas:
+            'first'
+            'first'
+            'second'
+            'thirth'
+            'fourth'
+            'fives';
+
+
+
+
+    }
+}
 
 
 }

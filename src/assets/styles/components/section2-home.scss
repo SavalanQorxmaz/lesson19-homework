@@ -1,0 +1,64 @@
+
+
+
+    .section2-home-frame {
+
+        width: 1200px;
+        margin: auto;
+
+  .box {
+
+    .tab-panel {
+       
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 0px;
+
+      
+
+       
+
+    }
+  }
+
+
+  .section2-home-card {
+    width: 250px;
+    margin: 10px;
+    background-size: cover;
+    padding: 0%;
+  }
+  @media screen and (max-width:1200px) {
+
+   & {
+        width: 900px;
+    }
+    
+  }
+
+  @media screen and (max-width:900px) {
+
+    & {
+         width: 600px;
+     }
+     
+   }
+
+   @media screen and (max-width:600px) {
+
+    & {
+         width: 100%;
+
+         .section2-home-card {
+            width: 100%;
+         }
+     }
+     
+   }
+
+}
+
+

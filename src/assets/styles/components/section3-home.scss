@@ -1,0 +1,20 @@
+
+
+.section3-home {
+
+    padding: 20px;
+    background: linear-gradient(to right, rgba(68, 34, 3, 0.719), rgba(126, 107, 2, 0.733));
+    .container {
+
+        .carousel-root {
+            width: 100%;
+            margin-top: 30px;
+    
+            .carousel.carousel-slider {
+                height: 400px;
+    
+       
+            }
+        }
+    }
+}
