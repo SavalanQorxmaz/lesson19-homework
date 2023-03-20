@@ -1,18 +1,53 @@
 
 .container {
 
-    .section5-home-image {
-        width: 50%;
-        height: 100%;
-        border: 1px solid black;
+    .section5-home {
+        display: flex;
+        height: 500px;
+        flex-wrap: wrap;
 
-    }
-
-    @media screen and (max-width: 800px) {
-
-        .section5-home-image {
-            width: 100%;
+        & > div {
+            width: 50%;
+            height: 100%;
         }
-        
+        .section5-home-image {
+           
+            border: 1px solid black;
+            background-size: cover;
+    
+        }
+
+        .section5-home-advanced {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(170, 169, 169, 0.699);
+            font-size: 20px;
+
+            & > * {
+
+                margin: 30px;
+
+                & > span {
+                    font-size: 30px;
+                    color: red;
+                }
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+
+            & > div {
+                width: 100%;
+            }
+            
+        }
+
     }
+
+ 
+
+  
 }
