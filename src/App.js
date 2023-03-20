@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import {MainContext} from './services/MainContext'
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 
@@ -55,13 +56,15 @@ addStates,
 
 <Header/>
 <Routes>
-  <Route path="/" element = {<Home/>}/>
+  {/* <Route path="/" element = {<Home/>}/> */}
   <Route path="/page1" element = {<Home/>}/>
   <Route path="/page2" element = {<Home/>}/>
   <Route path="/page3" element = {<Home/>}/>
   <Route path="/page4" element = {<Home/>}/>
   <Route path="/page5" element = {<Home/>}/>
 </Routes>
+
+<Footer/>
 </div>
     </MainContext.Provider>
   

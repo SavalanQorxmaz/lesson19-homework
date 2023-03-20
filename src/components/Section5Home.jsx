@@ -99,6 +99,7 @@ const Section5Home = () => {
 
             <p>{data[25].description}</p>
             <span>{countDownTime.toDateString()}</span>
+            {/* <span>{countDownTime.seconds.toString()+ 100}</span> */}
           </div>
 
         </div>

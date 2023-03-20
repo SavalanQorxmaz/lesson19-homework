@@ -1,0 +1,56 @@
+
+.footer {
+
+    // height: 150px;
+    background-color: rgb(219, 212, 116);
+    display: grid;
+  grid-template-areas: "first first second thirth fourth fourth";
+  gap: 10px;
+
+    & > * {
+        border: 2px solid brown;
+    }
+
+  .ashion {
+    grid-area: first;
+  }
+  .quick-links {
+    grid-area: second;
+  }
+  .account {
+   grid-area: thirth;
+  }
+  .news-letter {
+    grid-area: fourth;
+  }
+
+  @media screen and (max-width: 1200px) {
+    
+    & {
+      grid-template-areas: 'first first second'
+      'fourth fourth thirth';
+    }
+    
+  }
+  @media screen and (max-width: 1000px) {
+    
+    & {
+      grid-template-areas: 
+      'first first'
+      'second thirth'
+      'fourth fourth';
+    }
+    
+  }
+  @media screen and (max-width: 800px) {
+    
+    & {
+      grid-template-areas: 
+      'first'
+      'second'
+       'thirth'
+      'fourth';
+    }
+    
+  }
+}
