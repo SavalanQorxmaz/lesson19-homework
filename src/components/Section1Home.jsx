@@ -52,9 +52,9 @@ const Section1Home = () => {
 
     getMainData()
 
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
-    setData(mainData)
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log(err))
+    // setData(mainData)
   
 
 

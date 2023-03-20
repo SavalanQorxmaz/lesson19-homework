@@ -6,11 +6,10 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 
 
-const Section4Card = ({category, brand, description, image, price})=> {
+const Section4Card = ({category, brand,image, price})=> {
     const theme = useTheme();
     return (
         <Card sx={{ display: 'flex', height: 120, overflow: 'hidden', margin: '10px', border: '2px solid green' }}>
@@ -74,8 +73,8 @@ const Section4Home = () => {
 
     getMainData()
 
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log(err))
     // setData(mainData)
   
 
@@ -93,7 +92,7 @@ const Section4Home = () => {
                     data.map((item, index)=>{
                         if(index%7===3){
                             return(
-                                <Section4Card key={item.id} category={item.category} brand={item.brand} description ={item.description} image={item.images[0]} price = {item.price}/>
+                                <Section4Card key={item.id} category={item.category} brand={item.brand}  image={item.images[0]} price = {item.price}/>
                             )
                         }
                     })
@@ -107,7 +106,7 @@ const Section4Home = () => {
                     data.map((item, index)=>{
                         if(index%7===5){
                             return(
-                                <Section4Card key={item.id} category={item.category} brand={item.brand} description ={item.description} image={item.images[0]} price = {item.price}/>
+                                <Section4Card key={item.id} category={item.category} brand={item.brand}  image={item.images[0]} price = {item.price}/>
                             )
                         }
                     })
@@ -120,7 +119,7 @@ const Section4Home = () => {
                     data.map((item, index)=>{
                         if(index%7===2){
                             return(
-                                <Section4Card key={item.id} category={item.category} brand={item.brand} description ={item.description} image={item.images[0]} price = {item.price}/>
+                                <Section4Card key={item.id} category={item.category} brand={item.brand}  image={item.images[0]} price = {item.price}/>
                             )
                         }
                     })
