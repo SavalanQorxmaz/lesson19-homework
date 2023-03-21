@@ -56,7 +56,7 @@ addStates,
 
 <Header/>
 <Routes>
-  {/* <Route path="/" element = {<Home/>}/> */}
+  <Route path="/" element = {<Home/>}/>
   <Route path="/page1" element = {<Home/>}/>
   <Route path="/page2" element = {<Home/>}/>
   <Route path="/page3" element = {<Home/>}/>

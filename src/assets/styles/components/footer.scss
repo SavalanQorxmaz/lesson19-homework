@@ -1,56 +1,117 @@
+.container {
 
+  
 .footer {
 
-    // height: 150px;
-    background-color: rgb(219, 212, 116);
-    display: grid;
-  grid-template-areas: "first first second thirth fourth fourth";
-  gap: 10px;
+  // height: 150px;
+  // background-color: rgb(219, 212, 116);
+  margin-top: 30px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+grid-template-areas: 'first first second thirth fourth fourth';
+gap: 20px;
 
+  & > * {
+      // border: 2px solid brown;
+      & > h2 {
+        font-weight: 900;
+        font-size: 25px;
+      }
+  }
+
+.ashion {
+  grid-area: first;
+  // width: 350px;
+   & > div {
+    display: flex;
     & > * {
-        border: 2px solid brown;
+      
+    margin-right: 10px;
+    }
+   }
+}
+.quick-links {
+  grid-area: second;
+  // width: 170px;
+}
+.account {
+ grid-area: thirth;
+//  width: 170px;
+}
+.news-letter {
+  grid-area: fourth;
+  // width: 350px;
+
+  & > div:nth-child(2) {
+
+    border: 1px solid black;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0px;
+
+    & > input:nth-child(1) {
+
+      margin: 7px;
+      padding: 5px;
+      border: none;
+      outline: none;
+      
+    }
+    & > input:nth-child(2) {
+
+      background-color: red;
+      float: right;
+      border-radius: 25px;
+      padding: 10px;
+      margin: 2px;
+    }
+  }
+  & > div:nth-child(3) {
+
+    font-size: 30px;
+    & > * {
+      margin-right: 20px;
+
+      &:hover {
+        color: aqua;
+      }
     }
 
-  .ashion {
-    grid-area: first;
   }
-  .quick-links {
-    grid-area: second;
-  }
-  .account {
-   grid-area: thirth;
-  }
-  .news-letter {
-    grid-area: fourth;
-  }
+}
 
-  @media screen and (max-width: 1200px) {
-    
-    & {
-      grid-template-areas: 'first first second'
-      'fourth fourth thirth';
-    }
-    
+@media screen and (max-width: 1200px) {
+  
+  & {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 'first first second'
+    'fourth fourth thirth';
   }
-  @media screen and (max-width: 1000px) {
-    
-    & {
-      grid-template-areas: 
-      'first first'
-      'second thirth'
-      'fourth fourth';
-    }
-    
+  
+}
+@media screen and (max-width: 800px) {
+  
+  & {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    'first first'
+    'second thirth'
+    'fourth fourth';
   }
-  @media screen and (max-width: 800px) {
-    
-    & {
-      grid-template-areas: 
-      'first'
-      'second'
-       'thirth'
-      'fourth';
-    }
-    
+  
+}
+@media screen and (max-width: 600px) {
+  
+  & {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 
+    'first'
+    'second'
+     'thirth'
+    'fourth';
   }
+  
+}
+}
 }
