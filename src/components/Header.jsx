@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/images/logo.png.webp'
+import { MainContext } from '../services/MainContext'
 
 const Header = () => {
     const [sidebarContentShow, setSidebarContentShow] = useState('none')
     const [sidebarSubContentShow, setSidebarSubContentShow] = useState('none')
+    const {countFavorites}= useContext(MainContext)
 
 
 
@@ -136,7 +138,7 @@ const sidebarSubContentShowF = (e) => {
                         <div className='underline'></div>
                     </li>
                     <li>
-                        <Link to={'/page3'}>Shop</Link>
+                        <Link to={'/shop'}>Shop</Link>
                         <div className='underline'></div>
                     </li>
                     <li>
@@ -161,7 +163,7 @@ const sidebarSubContentShowF = (e) => {
                     <div className='menu-advanced'>
                         <i className="fa-solid fa-magnifying-glass"></i>
                         <i className="fa-solid fa-heart"></i>
-                        <i className="fa-solid fa-cart-plus"></i>
+                       <div className='relative-basket'> <i className="fa-solid fa-cart-plus " ></i><span>{countFavorites}</span></div>
                     </div>
 
                     <i onClick={sidebarShowF} className="menu-icon fa-solid fa-bars"></i>

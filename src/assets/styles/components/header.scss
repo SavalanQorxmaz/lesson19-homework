@@ -79,11 +79,27 @@
                & > * {
                 margin-right: 10px;
                 cursor: pointer;
+               
 
                 &:hover {
                     color: aqua;
                 }
                }
+               .relative-basket {
+                display: inline-block;
+                position: relative;
+                width: 20px;
+                height: 20px;
+
+                &> span {
+                    position: absolute;
+                    top: -20px;
+                    right: -20px;
+                    font-size: 30px;
+                    font-weight: 900;
+                color: red;
+                }
+            }
             }
 
             .menu-icon {

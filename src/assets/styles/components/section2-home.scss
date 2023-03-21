@@ -31,6 +31,48 @@
     background-size: cover;
     border: 3px solid rgb(104, 97, 3);
     padding: 0%;
+    position: relative;
+
+    
+    .card-hover {
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      bottom: 0;
+
+      // overflow: hidden;
+
+      i {
+          position: absolute;
+          font-size: 30px;
+          z-index: 9;
+          
+          &:nth-child(1){
+              left: 80px;
+          }
+          &:nth-child(2){
+              right: 80px;
+          }
+        
+      }
+  
+      .move-up-icon {
+          bottom: 50px;
+          transition: 500ms;
+      }
+      .move-down-icon {
+          bottom: -30px;
+          transition: 500ms;
+      }
+
+    
+  }
+  .visible-position {
+     display: block;
+  }
+  .hidden-position {
+      display: none;
+  }
   }
   @media screen and (max-width:1200px) {
 

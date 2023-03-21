@@ -1,0 +1,50 @@
+
+.shop-page {
+    position: relative;
+    border: 5px solid black;
+    height: 500px;
+    
+
+    .card-hover {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        position: absolute;
+        bottom: 0;
+
+        // overflow: hidden;
+
+        i {
+            position: absolute;
+            font-size: 30px;
+            
+            // &:nth-child(1){
+            //     left: 100px;
+            // }
+            // &:nth-child(2){
+            //     left: 150px;
+            // }
+          
+        }
+    
+        .move-up-icon {
+            bottom: 50px;
+            transition: 500ms;
+        }
+        .move-down-icon {
+            bottom: -50px;
+            transition: 500ms;
+        }
+
+      
+    }
+    .visible-position {
+       display: block;
+    }
+    .hidden-position {
+        display: none;
+    }
+   
+}
+
+

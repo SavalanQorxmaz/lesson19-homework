@@ -4,15 +4,19 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
+import { Shop } from "./pages/Shop";
 
 import {GET} from './services/FechService'
 
 const url = 'https://dummyjson.com/products'
 
+
+
 function App() {
   const [states, setStates] = useState({})
   const [mainData, setMainData] = useState([])
   const [mainDataIsReady, setMainDataIsReady] = useState(false)
+  const [countFavorites, setCountFavorites] = useState(0)
   const addStates = (newStates) => {
     setStates({
       ...states,
@@ -21,6 +25,8 @@ function App() {
   }
 
   const allStates = {
+    countFavorites,
+    setCountFavorites,
   mainData,
   mainDataIsReady,
 addStates,
@@ -28,7 +34,12 @@ addStates,
   }
 
   useEffect(()=>{
-
+    localStorage.setItem("ashion-selected", localStorage.getItem('ashion-selected'))
+      setCountFavorites(localStorage.getItem('ashion-selected').split(',').length-1)
+   
+  },[])
+  useEffect(()=>{
+    
     GET(url,{
         headers: {
             'Accept': 'application/json',
@@ -59,7 +70,7 @@ addStates,
   <Route path="/" element = {<Home/>}/>
   <Route path="/page1" element = {<Home/>}/>
   <Route path="/page2" element = {<Home/>}/>
-  <Route path="/page3" element = {<Home/>}/>
+  <Route path="/shop" element = {<Shop/>}/>
   <Route path="/page4" element = {<Home/>}/>
   <Route path="/page5" element = {<Home/>}/>
 </Routes>
