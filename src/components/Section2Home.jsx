@@ -8,33 +8,27 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-const bull = (
-<Box
-component="span"
-sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
->
-•
-</Box>
-);
+// const bull = (
+// <Box
+// component="span"
+// sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+// >
+// •
+// </Box>
+// );
 
 
 
 
 
 const Section2Card = ({category, brand, description, image, price, id})=>{
-
-  const [iconPosition, setIconPosition] = useState(false)
   const [colorChange, setColorChange] = useState('black')
   const {countFavorites ,setCountFavorites} = useContext(MainContext)
 
   const [parentPosition, setParentPosition] = useState('hidden-position');
-  const [firstChildPosition, setFirstChildPosition] =useState('move-down-icon');
-  const [secondChildPosition, setSecondChildPosition] = useState('move-down-icon');
   const [childPosition, setChildPosition] = useState('move-down-icon')
 
   
@@ -58,10 +52,10 @@ const iconVisibleF = (e) => {
             secondChildClasslist.remove('move-down-icon')
             setParentPosition('visible-position')
         setChildPosition("move-up-icon")
-                },1)
-            }, 200)
-           },1)
-        },1)
+                },10)
+            }, 100)
+           },10)
+        },10)
        }
       }
 
@@ -89,11 +83,11 @@ const iconHiddenF = (e)=>{
           setChildPosition("move-down-icon")
          
           
-      },400)
-          },1)
-      }, 200)
+      },200)
+          },10)
+      }, 100)
      })
-  },1)   
+  },10)   
 
    
 }
@@ -106,13 +100,13 @@ useEffect(()=>{
 },[])
 
 const addFavorites = ()=> {
-  if(colorChange == 'black'){
+  if(colorChange === 'black'){
     const tempArray =[].concat((localStorage.getItem('ashion-selected')).split(','),`${id}`)
     
     localStorage.setItem('ashion-selected',tempArray)
     setColorChange('red')
     setCountFavorites(countFavorites + 1)
-  } else if(colorChange == 'red'){
+  } else if(colorChange === 'red'){
     const tempArray =[].concat((localStorage.getItem('ashion-selected')).split(','))
     tempArray.splice(tempArray.indexOf(`${id}`),1)
     localStorage.setItem('ashion-selected',tempArray)
@@ -144,9 +138,6 @@ const addFavorites = ()=> {
         {'"a benevolent smile"'}
       </Typography>
     </CardContent>
-    <CardActions>
-      <Button size="small">Learn More</Button>
-    </CardActions>
   </Card>
   )
 }
@@ -161,7 +152,7 @@ const Section2Home = () => {
       setValue(newValue);
     };
 
-    const { mainData, mainDataIsReady } = useContext(MainContext)
+    const { mainData } = useContext(MainContext)
 
   // mainDatanin hazir olmasini gozlemek ucun funksiya
 
@@ -191,13 +182,6 @@ const Section2Home = () => {
   useEffect(() => {
 
     getMainData()
-
-      // .then(res => console.log(res))
-      // .catch(err => console.log(err))
-    // setData(mainData)
-  
-
-
   }, [mainData])
 
  if(dataIsReady){
