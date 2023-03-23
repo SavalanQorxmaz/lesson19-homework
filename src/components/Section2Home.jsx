@@ -10,20 +10,6 @@ import TabPanel from '@mui/lab/TabPanel';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-
-// const bull = (
-// <Box
-// component="span"
-// sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-// >
-// •
-// </Box>
-// );
-
-
-
-
-
 const Section2Card = ({category, brand, description, image, price, id})=>{
   const [colorChange, setColorChange] = useState('black')
   const {countFavorites ,setCountFavorites} = useContext(MainContext)
@@ -64,7 +50,7 @@ const iconVisibleF = (e) => {
 
 const iconHiddenF = (e)=>{
   e.preventDefault()
-  // e.stopPropagation()
+  e.stopPropagation()
   const parent = e.currentTarget.children[0]
   const firstChildClasslist = parent.children[0].classList
   const secondChildClasslist = parent.children[1].classList
