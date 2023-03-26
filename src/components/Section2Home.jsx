@@ -19,7 +19,7 @@ const Section2Card = ({category, brand, description, image, price, id})=>{
 
   
 const iconVisibleF = (e) => {
-  e.preventDefault()
+  // e.preventDefault()
   const parent = e.currentTarget.children[0]
   const firstChildClasslist = parent.children[0].classList
   const secondChildClasslist = parent.children[1].classList
@@ -49,8 +49,8 @@ const iconVisibleF = (e) => {
 
 
 const iconHiddenF = (e)=>{
-  e.preventDefault()
-  e.stopPropagation()
+  // e.preventDefault()
+  // e.stopPropagation()
   const parent = e.currentTarget.children[0]
   const firstChildClasslist = parent.children[0].classList
   const secondChildClasslist = parent.children[1].classList
@@ -118,10 +118,9 @@ const addFavorites = ()=> {
       <Typography sx={{ mb: 1.5 }} color="text.secondary">
         {description}
       </Typography>
-      <Typography variant="body2">
-       {price}
+      <Typography variant="body2" color={'red'}>
+       {price}$
         <br />
-        {'"a benevolent smile"'}
       </Typography>
     </CardContent>
   </Card>
