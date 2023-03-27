@@ -32,48 +32,95 @@
     border: 3px solid rgb(104, 97, 3);
     padding: 0%;
     position: relative;
+    overflow: hidden;
 
-    
-    .card-hover {
-      width: 100%;
-      height: 100px;
-      position: absolute;
-      bottom: 0;
+    .card-icon-box {
+        position: absolute;
+        bottom: -55px;
+        left: 40px;
+        width: 170px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-      // overflow: hidden;
+        .fa-solid {
+            border-radius: 50%;
+            border: 3px solid black;
+            padding: 5px;
+            transition:400ms;
+            &:hover {
+                cursor: pointer;
+                transform: rotate(360deg);
+            }
+        }
 
-      i {
-          position: absolute;
-          font-size: 30px;
-          z-index: 9;
-          
-          &:nth-child(1){
-              left: 80px;
-          }
-          &:nth-child(2){
-              right: 80px;
-          }
+        .fa-heart {
+            position: absolute;
+            font-size: 35px;
+            left: 20px;
+        }
+        .fa-cart-plus {
+            position: absolute;
+            font-size: 35px;
+            right: 20px;
+        }
+    }
+
+    &:not(:hover) {
+                
+        .fa-solid {
+
+       animation-name: icon-default;
+        animation-duration: 200ms;
+        animation-fill-mode: both;
+        }
+       
+        .fa-heart {
         
-      }
-  
-      .move-up-icon {
-          bottom: 10px;
-          transition: 300ms;
-      }
-      .move-down-icon {
-          bottom: -30px;
-          transition: 300ms;
-      }
+
+            animation-delay: 50ms;
+        }
+
+}
+&:hover .card-icon-box{
+
+
+    .fa-solid {
+
+        animation-name: icon-move;
+        animation-duration: 200ms;
+        animation-fill-mode: both;
+    }
+   
+    .fa-heart {
+       animation-delay: 50ms;
+
+    }
+}
 
     
+    
   }
-  .visible-position {
-     display: block;
-  }
-  .hidden-position {
-      display: none;
-  }
-  }
+
+  @keyframes icon-move {
+    0% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: 80px;
+    }   
+}
+
+@keyframes icon-default {
+
+    0% {
+        bottom: 80px;
+    }
+    100% {
+        bottom: 0px;
+    }  
+}
   @media screen and (max-width:1200px) {
 
    & {

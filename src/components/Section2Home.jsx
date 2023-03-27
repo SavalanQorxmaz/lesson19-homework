@@ -18,65 +18,65 @@ const Section2Card = ({category, brand, description, image, price, id})=>{
   const [childPosition, setChildPosition] = useState('move-down-icon')
 
   
-const iconVisibleF = (e) => {
-  // e.preventDefault()
-  const parent = e.currentTarget.children[0]
-  const firstChildClasslist = parent.children[0].classList
-  const secondChildClasslist = parent.children[1].classList
+// const iconVisibleF = (e) => {
+//   // e.preventDefault()
+//   const parent = e.currentTarget.children[0]
+//   const firstChildClasslist = parent.children[0].classList
+//   const secondChildClasslist = parent.children[1].classList
  
-  parent.classList.remove('hidden-position') 
-  parent.classList.add('visible-position')
-       if(parentPosition==='hidden-position'&&childPosition==='move-down-icon'){
+//   parent.classList.remove('hidden-position') 
+//   parent.classList.add('visible-position')
+//        if(parentPosition==='hidden-position'&&childPosition==='move-down-icon'){
        
-          setTimeout(()=>{
-            firstChildClasslist.add("move-up-icon")
-           setTimeout(()=>{
-            firstChildClasslist.remove('move-down-icon')
-            setTimeout(()=>{
-                secondChildClasslist.add("move-up-icon")
-                setTimeout(()=>{
-            secondChildClasslist.remove('move-down-icon')
-            setParentPosition('visible-position')
-        setChildPosition("move-up-icon")
-                },10)
-            }, 100)
-           },10)
-        },10)
-       }
-      }
+//           setTimeout(()=>{
+//             firstChildClasslist.add("move-up-icon")
+//            setTimeout(()=>{
+//             firstChildClasslist.remove('move-down-icon')
+//             setTimeout(()=>{
+//                 secondChildClasslist.add("move-up-icon")
+//                 setTimeout(()=>{
+//             secondChildClasslist.remove('move-down-icon')
+//             setParentPosition('visible-position')
+//         setChildPosition("move-up-icon")
+//                 },10)
+//             }, 100)
+//            },10)
+//         },10)
+//        }
+//       }
 
    
 
 
-const iconHiddenF = (e)=>{
-  // e.preventDefault()
-  // e.stopPropagation()
-  const parent = e.currentTarget.children[0]
-  const firstChildClasslist = parent.children[0].classList
-  const secondChildClasslist = parent.children[1].classList
-    setTimeout(()=>{
-      firstChildClasslist.add("move-down-icon")
-     setTimeout(()=>{
-      firstChildClasslist.remove('move-up-icon')
-      setTimeout(()=>{
-          secondChildClasslist.add("move-down-icon")
-          setTimeout(()=>{
-      secondChildClasslist.remove('move-up-icon')
-      setTimeout(()=>{
-          parent.classList.add('hidden-position') 
-          parent.classList.remove('visible-position')
-          setParentPosition('hidden-position')
-          setChildPosition("move-down-icon")
+// const iconHiddenF = (e)=>{
+//   // e.preventDefault()
+//   // e.stopPropagation()
+//   const parent = e.currentTarget.children[0]
+//   const firstChildClasslist = parent.children[0].classList
+//   const secondChildClasslist = parent.children[1].classList
+//     setTimeout(()=>{
+//       firstChildClasslist.add("move-down-icon")
+//      setTimeout(()=>{
+//       firstChildClasslist.remove('move-up-icon')
+//       setTimeout(()=>{
+//           secondChildClasslist.add("move-down-icon")
+//           setTimeout(()=>{
+//       secondChildClasslist.remove('move-up-icon')
+//       setTimeout(()=>{
+//           parent.classList.add('hidden-position') 
+//           parent.classList.remove('visible-position')
+//           setParentPosition('hidden-position')
+//           setChildPosition("move-down-icon")
          
           
-      },200)
-          },10)
-      }, 100)
-     })
-  },10)   
+//       },200)
+//           },10)
+//       }, 100)
+//      })
+//   },10)   
 
    
-}
+// }
 
 
 useEffect(()=>{
@@ -103,10 +103,10 @@ const addFavorites = ()=> {
 }
 
   return (
-    <Card className='section2-home-card' style={{background: `linear-gradient(to right, rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url(${image})`}} onMouseOver={iconVisibleF} onMouseLeave = {iconHiddenF} >
-     <div className='card-hover hidden-position'  >
-      <i className="fa-solid fa-heart move-down-icon" ></i>
-      <i className="fa-solid fa-cart-plus move-down-icon"  onClick={addFavorites} style={{color: `${colorChange}`}}></i>
+    <Card className='section2-home-card' style={{background: `linear-gradient(to right, rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url(${image})`}}  >
+     <div className='card-icon-box'  >
+      <i className="fa-solid fa-heart" ></i>
+      <i className="fa-solid fa-cart-plus"  onClick={addFavorites} style={{color: `${colorChange}`}}></i>
     </div>
     <CardContent>
       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
